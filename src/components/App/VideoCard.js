@@ -15,12 +15,14 @@ const Card = styled.div`
 
 const CardImg = styled.img`
   width: 100%;
+  cursor: pointer;
 `;
 
 const Title = styled.p`
   font-weight: bold;
   color: gray;
   font-size: 20px;
+  cursor: pointer;
 `;
 
 const Description = styled.p`

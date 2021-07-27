@@ -46,7 +46,7 @@ export const Header = () => {
   return (
     <AppHeader>
       <MenuIcon className="material-icons">menu</MenuIcon>
-      <SearchBar placeholder="Search..." placeholderTextColor="green"></SearchBar>
+      <SearchBar placeholder="Search..." placeholderTextColor="green" id="searchTerm"></SearchBar>
       <div></div>
 
       <ToggleButton>
