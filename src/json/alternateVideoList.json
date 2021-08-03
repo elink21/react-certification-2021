@@ -1,0 +1,352 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "uxzU1x3l9R_M2_2X3V_Bgestmcg",
+    "nextPageToken": "CAoQAA",
+    "regionCode": "MX",
+    "pageInfo": {
+      "totalResults": 1000000,
+      "resultsPerPage": 10
+    },
+    "items": [
+      {
+        "kind": "youtube#searchResult",
+        "etag": "iAaOTMO624KK80r01Qltt4oZzPY",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "gkBt7yLXyDk"
+        },
+        "snippet": {
+          "publishedAt": "2013-03-28T00:49:03Z",
+          "channelId": "UCU_MfrF9fw0CUMOrGy7D1mQ",
+          "title": "Ghost B.C. - Year Zero (Censored)",
+          "description": "Pre-Order new album \"Infestissumam\" on iTunes: http://smarturl.it/GhostBCInfestissumiT Pre Order Exclusive Album Packages: http://www.ghost-official.com Pre ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/gkBt7yLXyDk/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/gkBt7yLXyDk/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/gkBt7yLXyDk/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "GhostBCVEVO",
+          "liveBroadcastContent": "none",
+          "publishTime": "2013-03-28T00:49:03Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "tQO9K3pIznEhjxXP9_sHp8RGMQA",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "-0Ao4t_fe0I"
+        },
+        "snippet": {
+          "publishedAt": "2015-06-08T07:00:01Z",
+          "channelId": "UCU_MfrF9fw0CUMOrGy7D1mQ",
+          "title": "Ghost - Cirice (Official Music Video)",
+          "description": "\"Cirice\" is taken from Meliora, out August 21, 2015. Directed By: Roboshobo Pre-Order now: Ghost Store: http://found.ee/MELIORA iTunes: ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/-0Ao4t_fe0I/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/-0Ao4t_fe0I/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/-0Ao4t_fe0I/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "GhostBCVEVO",
+          "liveBroadcastContent": "none",
+          "publishTime": "2015-06-08T07:00:01Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "QF9Y4e8myXbm_zHUQsCFrCzwlz8",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "VqoyKzgkqR4"
+        },
+        "snippet": {
+          "publishedAt": "2016-09-29T07:00:02Z",
+          "channelId": "UCU_MfrF9fw0CUMOrGy7D1mQ",
+          "title": "Ghost - Square Hammer",
+          "description": "Music video by Ghost performing Square Hammer. (C) 2016 Loma Vista Recordings Distributed by Concord Music Group, Inc. http://vevo.ly/lZTyr2 #Ghost ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/VqoyKzgkqR4/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/VqoyKzgkqR4/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/VqoyKzgkqR4/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "GhostBCVEVO",
+          "liveBroadcastContent": "none",
+          "publishTime": "2016-09-29T07:00:02Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "tn2I3cGuyTrKd_v3PBNHluA4lTE",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "6oa_nbgE8M8"
+        },
+        "snippet": {
+          "publishedAt": "2013-07-08T16:30:43Z",
+          "channelId": "UCU_MfrF9fw0CUMOrGy7D1mQ",
+          "title": "Ghost B.C. - Monstrance Clock",
+          "description": "Music video by Ghost B.C. performing Monstrance Clock. (C) 2013 Seven Four Entertainment, LLC and Universal Republic Records, a Division of UMG ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/6oa_nbgE8M8/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/6oa_nbgE8M8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/6oa_nbgE8M8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "GhostBCVEVO",
+          "liveBroadcastContent": "none",
+          "publishTime": "2013-07-08T16:30:43Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "5kXeEyJbfR-mt0nVkEGEUOqVPSM",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "vyQZ13jobIY"
+        },
+        "snippet": {
+          "publishedAt": "2013-02-19T08:00:10Z",
+          "channelId": "UCU_MfrF9fw0CUMOrGy7D1mQ",
+          "title": "Ghost B.C. - Secular Haze",
+          "description": "\"Secular Haze\" from \"Infestissumam\" available for download now:http://smarturl.it/GhostBCInfestissumiT Music video by Ghost B.C. performing Secular Haze.",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/vyQZ13jobIY/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/vyQZ13jobIY/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/vyQZ13jobIY/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "GhostBCVEVO",
+          "liveBroadcastContent": "none",
+          "publishTime": "2013-02-19T08:00:10Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "_kg7F9Jvsar3-biGi_W_tN5OpbY",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "7Gr63DiEUxw"
+        },
+        "snippet": {
+          "publishedAt": "2018-10-17T04:00:00Z",
+          "channelId": "UCU_MfrF9fw0CUMOrGy7D1mQ",
+          "title": "Ghost - Dance Macabre",
+          "description": "Director: Zev Deans Producer: Kiley Coleman (Coleman Creative Agency) [MESSAGE FROM THE CLERGY] We wish to inform you the new video for \"Dance ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/7Gr63DiEUxw/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/7Gr63DiEUxw/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/7Gr63DiEUxw/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "GhostBCVEVO",
+          "liveBroadcastContent": "none",
+          "publishTime": "2018-10-17T04:00:00Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "1dedf3PYfzGaSa9fGMQlKLRfAjE",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "6l2FEHr_Yzg"
+        },
+        "snippet": {
+          "publishedAt": "2014-02-11T10:30:17Z",
+          "channelId": "UCN7e8PeiCH_1vz8QqgR69xA",
+          "title": "Ghost - Ritual (Live at Music Feeds Studio)",
+          "description": "Swedish heavy-metal act Ghost, who toured Australia recently with the Big Day Out, dropped by Music Feeds Studio in full clergymen attire to perform Ritual, ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/6l2FEHr_Yzg/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/6l2FEHr_Yzg/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/6l2FEHr_Yzg/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Music Feeds",
+          "liveBroadcastContent": "none",
+          "publishTime": "2014-02-11T10:30:17Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "cYHqzKzbpM7zMhfm_SWDNjm1HA8",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "7hMaHDTw-pI"
+        },
+        "snippet": {
+          "publishedAt": "2017-08-24T10:00:00Z",
+          "channelId": "UCU_MfrF9fw0CUMOrGy7D1mQ",
+          "title": "Ghost - He Is (Music Video)",
+          "description": "Video Credits: Director: Zev Deans Producer / Production Manager: Christian Lathers DP (CHURCH): Nico Poalillo DP (GHOST): Christopher Raymond ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/7hMaHDTw-pI/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/7hMaHDTw-pI/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/7hMaHDTw-pI/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "GhostBCVEVO",
+          "liveBroadcastContent": "none",
+          "publishTime": "2017-08-24T10:00:00Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "sF6ukB_GvQQi9pFsWDiqDUwjOHg",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "6RxJXZmb1is"
+        },
+        "snippet": {
+          "publishedAt": "2019-12-08T09:20:07Z",
+          "channelId": "UC90EHC8uvTIWIrF0Tr16UPw",
+          "title": "Ghost B.C. - Infestissumam (Deluxe Edition)",
+          "description": "0:00 Infestissumam 1:42 Per Aspera Ad Inferi 5:51 Secular Haze 11:02 Jigolo Har Megiddo 15:01 Ghuleh/Zombie Queen 22:30 Year Zero 28:20 Body And ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/6RxJXZmb1is/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/6RxJXZmb1is/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/6RxJXZmb1is/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "The Best Of Ghost B.C.",
+          "liveBroadcastContent": "none",
+          "publishTime": "2019-12-08T09:20:07Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "cI2rLPNnb6QDN3IRn13iohKjSj4",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "Dxr5sKyK8ys"
+        },
+        "snippet": {
+          "publishedAt": "2013-07-03T14:00:27Z",
+          "channelId": "UC0iwHRFpv2_fpojZgQhElEQ",
+          "title": "Ghost B.C. - &quot;Monstrance Clock&quot; (Official Video)",
+          "description": "You Should Subscribe Here Now: http://bit.ly/VErZkw Raise your devil horns in worship of Ghost B.C.'s new psalm, \"Monstrance Clock.\" Buy it on iTunes: ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/Dxr5sKyK8ys/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/Dxr5sKyK8ys/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/Dxr5sKyK8ys/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Noisey",
+          "liveBroadcastContent": "none",
+          "publishTime": "2013-07-03T14:00:27Z"
+        }
+      }
+    ]
+  }
