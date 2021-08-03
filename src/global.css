@@ -4,3 +4,8 @@ body{
   font-family: 'Montserrat';
   margin: 0;
 }
+
+::selection{
+  background-color: violet;
+  
+}

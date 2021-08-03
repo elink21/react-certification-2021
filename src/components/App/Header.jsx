@@ -30,27 +30,43 @@ const SearchBar = styled.input`
   &:focus {
     outline: none;
   }
-  &:hover{
-      opacity:0.9;
+  &:hover {
+    opacity: 0.9;
   }
 `;
 
 const ToggleButton = styled.div``;
 
-
 const LoginButton = styled.span`
-cursor: pointer;
+  cursor: pointer;
 `;
 
-export const Header = () => {
+export const Header = (props) => {
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      console.log(event.target.value);
+      const valueToSearch = event.target.value;
+      props.updateFunction("search",valueToSearch);
+      props.toggleFunction(false);
+    }
+  };
+
   return (
     <AppHeader>
       <MenuIcon className="material-icons">menu</MenuIcon>
-      <SearchBar placeholder="Search..." placeholderTextColor="green" id="searchTerm"></SearchBar>
+
+      <SearchBar
+        onKeyDown={handleKeyDown}
+        placeholder="Search..."
+        placeholderTextColor="green"
+        id="searchTerm"
+      ></SearchBar>
+
       <div></div>
 
       <ToggleButton>
         <Switch
+        
           name="checkedTheme"
           inputProps={{ 'aria-label': 'default color checkbox' }}
           color="default"

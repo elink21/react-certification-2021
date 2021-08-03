@@ -16,6 +16,7 @@ const Card = styled.div`
 const CardImg = styled.img`
   width: 100%;
   cursor: pointer;
+  max-width: 100%;
 `;
 
 const Title = styled.p`
@@ -30,12 +31,26 @@ const Description = styled.p`
   font-size: 14px;
 `;
 
-export const VideoCard = ({ imageUrl, title, description }) => {
+export const VideoCard = ({
+  imageUrl,
+  title,
+  description,
+  video,
+  updateActualVideo,
+  toggleFunction,
+  updateVideoList,
+}) => {
+  const handleVideoClicked = (video) => {
+    updateActualVideo(video);
+    updateVideoList('videoId', video.id.videoId);
+    toggleFunction(true);
+  };
+
   return (
-    <Card>
+    <Card onClick={() => handleVideoClicked(video)}>
       <CardImg src={imageUrl} alt="" />
       <Title>{title}</Title>
-      <Description>{description}</Description>
+      <Description>{description.substring(0,200)}</Description>
     </Card>
   );
 };
