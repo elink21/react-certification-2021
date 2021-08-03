@@ -30,7 +30,7 @@ export const MainView = () => {
 
   useEffect(() => {
     console.log('Effect called');
-    fetchVideos('search', 'rock');
+    //fetchVideos('search', 'wizeline');
     setVideos(fileVideos);
   }, []);
 
