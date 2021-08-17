@@ -8,6 +8,7 @@ import { SET_SEARCH_TERM, SET_THEME, GET_VIDEOS, SET_SELECTED_VIDEO } from './ty
 
 const GlobalState = (props) => {
   let Key = 'AIzaSyAII9XvTdlHMGKadu3lmyxr9wuIcCjv4q8';
+  //Alternative key when quota limit is reached
   Key= "AIzaSyBlPrvGVNZJXVXB4Gzx50kBMFJnPYuWgnM";
 
   const themes = {
