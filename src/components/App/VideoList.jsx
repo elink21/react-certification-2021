@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { VideoCard } from './VideoCard';
+import GlobalContext from '../context/GlobalContext';
 
 const VideosContainer = styled.div`
   display: grid;
@@ -11,9 +12,12 @@ const VideosContainer = styled.div`
 `;
 
 export const VideoList = (props) => {
+  const globalContext = useContext(GlobalContext);
+
+ 
   return (
     <VideosContainer>
-      {props.videos.items.map(function (video, i) {
+      {globalContext.videos.items.map(function (video, i) {
         return (
           <VideoCard
             key={i}
@@ -22,9 +26,7 @@ export const VideoList = (props) => {
             description={video.snippet.description}
             videoId={video.id.videoId}
             video={video}
-            updateActualVideo={props.updateActualVideo}
             toggleFunction={props.toggleFunction}
-            updateVideoList={props.updateVideoList}
           ></VideoCard>
         );
       })}

@@ -1,11 +1,11 @@
-import React  from 'react';
+import React from 'react';
 import { MainView } from './MainView';
-
-
+import GlobalState from '../context/GlobalState';
 function App() {
-
   return (
-    <MainView></MainView>
+    <GlobalState>
+      <MainView></MainView>
+    </GlobalState>
   );
 }
 

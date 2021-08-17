@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import GlobalContext from '../context/GlobalContext';
 
 const Card = styled.div`
   display: grid;
@@ -21,13 +22,13 @@ const CardImg = styled.img`
 
 const Title = styled.p`
   font-weight: bold;
-  color: gray;
+  color: ${(props) => props.theme.cardFontColor};
   font-size: 20px;
   cursor: pointer;
 `;
 
 const Description = styled.p`
-  color: gray;
+  color: ${(props) => props.theme.cardFontColor};
   font-size: 14px;
 `;
 
@@ -36,13 +37,22 @@ export const VideoCard = ({
   title,
   description,
   video,
-  updateActualVideo,
   toggleFunction,
-  updateVideoList,
 }) => {
+  const globalContext = useContext(GlobalContext);
+
+  Title.defaultProps = {
+    theme: globalContext.theme,
+  };
+
+  Description.defaultProps = {
+    theme: globalContext.theme,
+  };
+
   const handleVideoClicked = (video) => {
-    updateActualVideo(video);
-    updateVideoList('videoId', video.id.videoId);
+    globalContext.getVideos('related', video.id.videoId);
+    globalContext.setSelectedVideo(video);
+    
     toggleFunction(true);
   };
 
@@ -50,7 +60,7 @@ export const VideoCard = ({
     <Card onClick={() => handleVideoClicked(video)}>
       <CardImg src={imageUrl} alt="" />
       <Title>{title}</Title>
-      <Description>{description.substring(0,200)}</Description>
+      <Description>{description.substring(0, 200)}</Description>
     </Card>
   );
 };

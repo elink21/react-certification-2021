@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { VideoList } from './VideoList';
 import styled from 'styled-components';
+import GlobalContext from '../context/GlobalContext';
 
 const SearchView = styled.div`
   display: grid;
@@ -20,6 +21,7 @@ const VideoData = styled.div`
 `;
 
 export const VideoSearchView = (props) => {
+  const globalContext= useContext(GlobalContext);
   return (
     <SearchView>
       <VideoFrame>
@@ -27,23 +29,23 @@ export const VideoSearchView = (props) => {
           title="video"
           width="100%"
           height="500px"
-          src={'https://www.youtube.com/embed/' + props.video.id.videoId}
+          allow="autoplay"
+          src={'https://www.youtube.com/embed/' + globalContext.selectedVideo.id.videoId +"?autoplay=1"}
         ></iframe>
 
         <VideoData>
-          <h1>{props.video.snippet.title}</h1>
-          <small>{props.video.snippet.description.substring(0,200)}</small>
+          <h1>{globalContext.selectedVideo.snippet.title}</h1>
+          <small>{globalContext.selectedVideo.snippet.description.substring(0, 200)}</small>
         </VideoData>
       </VideoFrame>
 
       <VideoListWrapper>
-        <span role="img" aria-label="link">🔗</span>
+        <span role="img" aria-label="link">
+          🔗
+        </span>
         <h3>Related videos </h3>
         <VideoList
-          videos={props.videos}
-          updateActualVideo={props.updateActualVideo}
-          updateVideoList={props.updateVideoList}
-          toggleFunction= {props.toggleFunction}
+          toggleFunction={props.toggleFunction}
         ></VideoList>
       </VideoListWrapper>
     </SearchView>

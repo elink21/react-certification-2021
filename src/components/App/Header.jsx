@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import styled from 'styled-components';
 import Switch from '@material-ui/core/Switch';
+import GlobalContext from '../context/GlobalContext';
 
 const AppHeader = styled.div`
-  background-color: #ec407a;
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.color};
   font-size: 40px;
   display: grid;
   align-items: center;
@@ -22,8 +24,8 @@ const MenuIcon = styled.span`
 const SearchBar = styled.input`
   border-radius: 5px;
   padding: 10px;
-  background: #ff77a9;
-  color: white;
+  background: ${(props) => props.theme.primaryLight};
+  color: ${(props) => props.theme.searchBarFontColor};
   font-size: 16px;
   border: none;
 
@@ -42,11 +44,21 @@ const LoginButton = styled.span`
 `;
 
 export const Header = (props) => {
+  const globalContext = useContext(GlobalContext);
+
+  /*Passing theme to all styled components */
+  SearchBar.defaultProps = {
+    theme: globalContext.theme,
+  };
+  AppHeader.defaultProps = {
+    theme: globalContext.theme,
+  };
+
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      console.log(event.target.value);
       const valueToSearch = event.target.value;
-      props.updateFunction("search",valueToSearch);
+      globalContext.getVideos('search', valueToSearch);
+      globalContext.setSearchTerm(valueToSearch);
       props.toggleFunction(false);
     }
   };
@@ -66,11 +78,12 @@ export const Header = (props) => {
 
       <ToggleButton>
         <Switch
-        
           name="checkedTheme"
           inputProps={{ 'aria-label': 'default color checkbox' }}
-          color="default"
+          color="primary"
+          onChange={(e) => globalContext.setTheme(e.target.checked)}
         />
+
         <span>Dark mode</span>
       </ToggleButton>
       <LoginButton className="material-icons">account_circle</LoginButton>
