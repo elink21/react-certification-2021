@@ -7,8 +7,9 @@ import axios from 'axios';
 import { SET_SEARCH_TERM, SET_THEME, GET_VIDEOS, SET_SELECTED_VIDEO } from './types';
 
 const GlobalState = (props) => {
-  let Key = 'AIzaSyAII9XvTdlHMGKadu3lmyxr9wuIcCjv4q8';
-  Key= "AIzaSyBlPrvGVNZJXVXB4Gzx50kBMFJnPYuWgnM";
+  //let Key = 'AIzaSyAII9XvTdlHMGKadu3lmyxr9wuIcCjv4q8';
+  //Alternative key when quota limit is reached
+  let alternativeKey = 'AIzaSyBlPrvGVNZJXVXB4Gzx50kBMFJnPYuWgnM';
 
   const themes = {
     light: {
@@ -33,7 +34,7 @@ const GlobalState = (props) => {
     videos: { items: [] },
     searchTerm: 'wizeline',
     theme: themes.light,
-    selectedVideo:{}
+    selectedVideo: {},
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
@@ -67,7 +68,7 @@ const GlobalState = (props) => {
     if (queryType === 'search') {
       axios
         .get(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${queryTerm}&type=video&maxResults=10&key=${Key}`
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${queryTerm}&type=video&maxResults=10&key=${alternativeKey}`
         )
         .then((response) => {
           console.log(response);
@@ -79,7 +80,7 @@ const GlobalState = (props) => {
     } else {
       axios
         .get(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${alternativeKey}`
         )
         .then((response) => {
           dispatch({
