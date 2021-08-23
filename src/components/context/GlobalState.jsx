@@ -2,13 +2,13 @@ import React, { useReducer } from 'react';
 import GlobalReducer from './GlobalReducer';
 import GlobalContext from './GlobalContext';
 import axios from 'axios';
-//import fileVideos from '../../json/videoList.json';
+import fileVideos from '../../json/videoList.json';
 //import alternativeVideos from '../../json/alternateVideoList.json';
 import { SET_SEARCH_TERM, SET_THEME, GET_VIDEOS, SET_SELECTED_VIDEO } from './types';
 
 const GlobalState = (props) => {
   let Key = 'AIzaSyAII9XvTdlHMGKadu3lmyxr9wuIcCjv4q8';
-  Key= "AIzaSyBlPrvGVNZJXVXB4Gzx50kBMFJnPYuWgnM";
+  Key = 'AIzaSyBlPrvGVNZJXVXB4Gzx50kBMFJnPYuWgnM';
 
   const themes = {
     light: {
@@ -33,7 +33,7 @@ const GlobalState = (props) => {
     videos: { items: [] },
     searchTerm: 'wizeline',
     theme: themes.light,
-    selectedVideo:{}
+    selectedVideo: {},
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
@@ -65,7 +65,16 @@ const GlobalState = (props) => {
 
   const getVideos = (queryType, queryTerm) => {
     if (queryType === 'search') {
-      axios
+      dispatch({
+        type: GET_VIDEOS,
+        payload: fileVideos,
+      });
+
+      dispatch({
+        type: SET_SELECTED_VIDEO,
+        payload: fileVideos.items[0],
+      });
+      /*axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${queryTerm}&type=video&maxResults=10&key=${Key}`
         )
@@ -75,18 +84,22 @@ const GlobalState = (props) => {
             type: GET_VIDEOS,
             payload: response.data,
           });
-        });
+        });*/
     } else {
-      axios
-        .get(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
-        )
-        .then((response) => {
-          dispatch({
-            type: GET_VIDEOS,
-            payload: response.data,
-          });
-        });
+      dispatch({
+        type: GET_VIDEOS,
+        payload: fileVideos,
+      });
+      // axios
+      //   .get(
+      //     `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
+      //   )
+      //   .then((response) => {
+      //     dispatch({
+      //       type: GET_VIDEOS,
+      //       payload: response.data,
+      //     });
+      //   });
     }
   };
 

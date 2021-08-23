@@ -26,7 +26,6 @@ export const VideoList = (props) => {
             description={video.snippet.description}
             videoId={video.id.videoId}
             video={video}
-            toggleFunction={props.toggleFunction}
           ></VideoCard>
         );
       })}

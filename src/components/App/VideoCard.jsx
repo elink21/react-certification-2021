@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import GlobalContext from '../context/GlobalContext';
-
+import { Link } from 'react-router-dom';
 const Card = styled.div`
   display: grid;
   width: 100%;
@@ -32,13 +32,7 @@ const Description = styled.p`
   font-size: 14px;
 `;
 
-export const VideoCard = ({
-  imageUrl,
-  title,
-  description,
-  video,
-  toggleFunction,
-}) => {
+export const VideoCard = ({ imageUrl, title, description, video }) => {
   const globalContext = useContext(GlobalContext);
 
   Title.defaultProps = {
@@ -52,15 +46,19 @@ export const VideoCard = ({
   const handleVideoClicked = (video) => {
     globalContext.getVideos('related', video.id.videoId);
     globalContext.setSelectedVideo(video);
-    
-    toggleFunction(true);
   };
 
   return (
-    <Card onClick={() => handleVideoClicked(video)}>
-      <CardImg src={imageUrl} alt="" />
-      <Title>{title}</Title>
-      <Description>{description.substring(0, 200)}</Description>
+    <Card>
+      <Link
+        to="/watchVideo"
+        style={{ textDecoration: 'none' }}
+        onClick={() => handleVideoClicked(video)}
+      >
+        <CardImg src={imageUrl} alt="" />
+        <Title>{title}</Title>
+        <Description>{description.substring(0, 200)}</Description>
+      </Link>
     </Card>
   );
 };

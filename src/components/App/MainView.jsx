@@ -2,8 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Header } from './Header';
 import { VideoList } from './VideoList';
-import { VideoSearchView } from './VideoSearchView';
+import { PlayerView } from './PlayerView';
+import { SearchView } from './SearchView';
 import GlobalContext from '../context/GlobalContext';
+
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 const MainContainer = styled.div`
   height: 100vh;
@@ -18,11 +21,6 @@ const MainContainer = styled.div`
   color: ${(props) => props.theme.color};
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  font-size: 50px;
-`;
-
 export const MainView = () => {
   const globalContext = useContext(GlobalContext);
   MainContainer.defaultProps = {
@@ -32,40 +30,29 @@ export const MainView = () => {
   const [searchViewEnabled, setSearchViewEnabled] = useState(false);
 
   useEffect(() => {
-    globalContext.getVideos('search', 'wizeline');
+    async function fetchData() {
+      await globalContext.getVideos('search', 'wizeline');
+    }
+
+    fetchData();
     console.log('Effect called');
   }, []);
 
-
-
-  const toggleViewMode = (newValue) => {
-    setSearchViewEnabled(newValue);
-  };
-
-
-  let ActualView;
-
-  if (searchViewEnabled) {
-    ActualView = (
-      <VideoSearchView
-        toggleFunction={toggleViewMode}
-      />
-    );
-  } else {
-    ActualView = (
-      <div>
-        <Title>Search term: {globalContext.searchTerm}</Title>
-        <VideoList
-          toggleFunction={toggleViewMode}
-        ></VideoList>
-      </div>
-    );
-  }
-
   return (
-    <MainContainer>
-      <Header toggleFunction={toggleViewMode} ></Header>
-      {ActualView}
-    </MainContainer>
+    <BrowserRouter>
+      <MainContainer>
+        <Switch>
+          <Route exact path="/">
+            <Header></Header>
+            <SearchView></SearchView>
+          </Route>
+
+          <Route path="/watchVideo">
+            <Header></Header>
+            <PlayerView></PlayerView>
+          </Route>
+        </Switch>
+      </MainContainer>
+    </BrowserRouter>
   );
 };
