@@ -31,7 +31,7 @@ export const MainView = () => {
 
   useEffect(() => {
     async function fetchData() {
-      await globalContext.getVideos('search', 'wizeline');
+      await globalContext.getVideos('search', 'KOF XV');
     }
 
     fetchData();

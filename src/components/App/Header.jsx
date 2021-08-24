@@ -43,7 +43,7 @@ const LoginButton = styled.span`
   cursor: pointer;
 `;
 
-export const Header = (props) => {
+export const Header = () => {
   const globalContext = useContext(GlobalContext);
 
   /*Passing theme to all styled components */
@@ -59,7 +59,6 @@ export const Header = (props) => {
       const valueToSearch = event.target.value;
       globalContext.getVideos('search', valueToSearch);
       globalContext.setSearchTerm(valueToSearch);
-      props.toggleFunction(false);
     }
   };
 

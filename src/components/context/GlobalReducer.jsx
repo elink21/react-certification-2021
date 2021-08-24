@@ -1,10 +1,10 @@
-import { SET_SEARCH_TERM, GET_VIDEOS, SET_THEME, SET_SELECTED_VIDEO } from './types';
+import { SET_SEARCH_TERM, SET_VIDEOS, SET_THEME, SET_SELECTED_VIDEO } from './types';
 
 export default (state, action) => {
   const { payload, type } = action;
 
   switch (type) {
-    case GET_VIDEOS:
+    case SET_VIDEOS:
       return {
         ...state,
         videos: payload,

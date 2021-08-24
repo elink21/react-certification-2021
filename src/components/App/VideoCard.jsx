@@ -44,8 +44,8 @@ export const VideoCard = ({ imageUrl, title, description, video }) => {
   };
 
   const handleVideoClicked = (video) => {
-    globalContext.getVideos('related', video.id.videoId);
     globalContext.setSelectedVideo(video);
+    globalContext.getVideos('related', video.id.videoId);
   };
 
   return (
