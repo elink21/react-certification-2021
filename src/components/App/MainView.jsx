@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Header } from './Header';
-import { VideoList } from './VideoList';
 import { PlayerView } from './PlayerView';
 import { SearchView } from './SearchView';
 import GlobalContext from '../context/GlobalContext';
 
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { LoginView } from './LoginView';
 
 const MainContainer = styled.div`
   height: 100vh;
@@ -50,6 +50,11 @@ export const MainView = () => {
           <Route path="/watchVideo">
             <Header></Header>
             <PlayerView></PlayerView>
+          </Route>
+
+          <Route path="/login">
+            <Header></Header>
+            <LoginView></LoginView>
           </Route>
         </Switch>
       </MainContainer>

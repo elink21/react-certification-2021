@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
-
+import { Link } from "react-router-dom";
+import React, { useContext, useState } from 'react';
+import { NavBar } from './NavBar';
 import styled from 'styled-components';
 import Switch from '@material-ui/core/Switch';
 import GlobalContext from '../context/GlobalContext';
@@ -46,6 +47,7 @@ const LoginButton = styled.span`
 export const Header = () => {
   const globalContext = useContext(GlobalContext);
   const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', '');
+  const [showNavBar, setShowNavBar] = useState(false);
 
   /*Passing theme to all styled components */
   SearchBar.defaultProps = {
@@ -65,7 +67,15 @@ export const Header = () => {
 
   return (
     <AppHeader>
-      <MenuIcon className="material-icons">menu</MenuIcon>
+      <MenuIcon
+        onClick={(e) => {
+          setShowNavBar(true);
+        }}
+        className="material-icons"
+      >
+        menu
+      </MenuIcon>
+      {showNavBar && <NavBar setShowNavBar={setShowNavBar} />}
 
       <SearchBar
         onKeyDown={handleKeyDown}
@@ -90,7 +100,9 @@ export const Header = () => {
 
         <span>Dark mode</span>
       </ToggleButton>
-      <LoginButton className="material-icons">account_circle</LoginButton>
+      <Link to="/login" style={{textDecoration: "none", color:"white"}}>
+        <LoginButton className="material-icons">account_circle</LoginButton>
+      </Link>
     </AppHeader>
   );
 };
