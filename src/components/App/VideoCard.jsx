@@ -57,7 +57,7 @@ export const VideoCard = ({ imageUrl, title, description, video }) => {
       >
         <CardImg src={imageUrl} alt="" />
         <Title>{title}</Title>
-        <Description>{description.substring(0, 200)}</Description>
+        <Description>{description?.substring(0, 200)}</Description>
       </Link>
     </Card>
   );

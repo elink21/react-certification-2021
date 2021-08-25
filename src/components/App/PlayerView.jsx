@@ -40,7 +40,7 @@ export const PlayerView = (props) => {
         <VideoData>
           <h1>{globalContext.selectedVideo.snippet.title}</h1>
           <small>
-            {globalContext.selectedVideo.snippet.description.substring(0, 200)}
+            {globalContext.selectedVideo.snippet?.description.substring(0, 200)}
           </small>
         </VideoData>
       </VideoFrame>

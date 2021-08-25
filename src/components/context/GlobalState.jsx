@@ -90,10 +90,11 @@ const GlobalState = (props) => {
       await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
-        ).then((response) => {
+        )
+        .then((response) => {
           dispatch({
             type: SET_VIDEOS,
-            payload: { ...response.data },
+            payload: response.data,
           });
         });
     }

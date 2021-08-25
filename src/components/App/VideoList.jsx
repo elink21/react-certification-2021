@@ -21,9 +21,9 @@ export const VideoList = (props) => {
         return (
           <VideoCard
             key={i}
-            imageUrl={video.snippet.thumbnails.high.url}
-            title={video.snippet.title}
-            description={video.snippet.description}
+            imageUrl={video.snippet?.thumbnails.high.url}
+            title={video.snippet?.title}
+            description={video.snippet?.description}
             videoId={video.id.videoId}
             video={video}
           ></VideoCard>
