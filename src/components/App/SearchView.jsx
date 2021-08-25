@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import GlobalContext from '../context/GlobalContext';
 import { VideoList } from './VideoList';
-import { Header } from './Header';
 
 
 const Title = styled.h1`

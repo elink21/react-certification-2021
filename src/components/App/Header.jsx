@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Switch from '@material-ui/core/Switch';
 import GlobalContext from '../context/GlobalContext';
-
+import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
 const AppHeader = styled.div`
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.color};
@@ -45,6 +45,7 @@ const LoginButton = styled.span`
 
 export const Header = () => {
   const globalContext = useContext(GlobalContext);
+  const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', '');
 
   /*Passing theme to all styled components */
   SearchBar.defaultProps = {
@@ -71,6 +72,10 @@ export const Header = () => {
         placeholder="Search..."
         placeholderTextColor="green"
         id="searchTerm"
+        value={searchTerm}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
       ></SearchBar>
 
       <div></div>
