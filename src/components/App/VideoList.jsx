@@ -5,15 +5,13 @@ import GlobalContext from '../context/GlobalContext';
 
 const VideosContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   justify-items: center;
   gap: 20px;
   padding: 20px;
 `;
 
 export const VideoList = (props) => {
-
- 
   return (
     <VideosContainer>
       {props.videos.items.map(function (video, i) {
@@ -25,6 +23,7 @@ export const VideoList = (props) => {
             description={video.snippet?.description}
             videoId={video.id.videoId}
             video={video}
+            forFavorites={props.forFavorites}
           ></VideoCard>
         );
       })}

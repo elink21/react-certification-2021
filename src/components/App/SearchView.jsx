@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext,useEffect } from 'react';
 import styled from 'styled-components';
 import GlobalContext from '../context/GlobalContext';
 import { VideoList } from './VideoList';
-
 
 const Title = styled.h1`
   text-align: center;
@@ -11,11 +10,12 @@ const Title = styled.h1`
 
 export const SearchView = () => {
   const globalContext = useContext(GlobalContext);
+ 
 
   return (
     <div>
       <Title>Search term: {globalContext.searchTerm}</Title>
-      <VideoList videos={globalContext.videos}></VideoList>
+      <VideoList forFavorites={false} videos={globalContext.videos}></VideoList>
     </div>
   );
 };

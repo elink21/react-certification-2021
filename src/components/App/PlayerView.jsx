@@ -38,7 +38,9 @@ const FavoriteButton = styled.button`
 export const PlayerView = (props) => {
   const globalContext = useContext(GlobalContext);
   const [isLogged, setIsLogged] = useSessionStorage('isLogged', '');
-  const [favoriteVideos, setFavoriteVideos] = useLocalStorage('favoriteVideos', {items:[]});
+  const [favoriteVideos, setFavoriteVideos] = useLocalStorage('favoriteVideos', {
+    items: [],
+  });
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -51,12 +53,14 @@ export const PlayerView = (props) => {
       }
     }
   }, [favoriteVideos, globalContext.selectedVideo]);
+  function favoritesView() {
+    return window.location.href.toLowerCase().includes('favorites');
+  }
 
   function manageFavorites() {
-    const newFavorites = {items:[...favoriteVideos.items]};
+    const newFavorites = { items: [...favoriteVideos.items] };
 
     if (!isFavorite) {
-
       newFavorites.items.push(globalContext.selectedVideo);
       console.log(newFavorites);
       setFavoriteVideos(newFavorites);
@@ -66,12 +70,12 @@ export const PlayerView = (props) => {
           newFavorites.items.splice(i, 1);
         }
       }
+
       setFavoriteVideos(newFavorites);
       setIsFavorite(false);
     }
   }
 
-  function isActualVideoAdded() {}
   return (
     <PlayerViewWrapper>
       <VideoFrame>
@@ -112,7 +116,10 @@ export const PlayerView = (props) => {
           🔗
         </span>
         <h3>Related videos </h3>
-        <VideoList videos={globalContext.videos}></VideoList>
+        <VideoList
+          forFavorites={favoritesView()}
+          videos={favoritesView() ? favoriteVideos : globalContext.videos}
+        ></VideoList>
       </VideoListWrapper>
     </PlayerViewWrapper>
   );

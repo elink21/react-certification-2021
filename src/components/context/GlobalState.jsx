@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import GlobalReducer from './GlobalReducer';
 import GlobalContext from './GlobalContext';
 import axios from 'axios';
-import fileVideos from '../../json/kofVideos.json'; //Im actually using a JSON file for the bug videos
+import fileVideos from '../../json/videoList.json'; //Im actually using a JSON file for the bug videos
 //import alternativeVideos from '../../json/alternateVideoList.json';
 import { SET_SEARCH_TERM, SET_THEME, SET_VIDEOS, SET_SELECTED_VIDEO } from './types';
 import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
@@ -50,7 +50,6 @@ const GlobalState = (props) => {
     });
   };
 
-
   const setSearchTerm = (searchTerm) => {
     dispatch({
       type: SET_SEARCH_TERM,
@@ -67,33 +66,26 @@ const GlobalState = (props) => {
 
   const getVideos = async (queryType, queryTerm) => {
     if (queryType === 'search') {
-      dispatch({
-        type: SET_VIDEOS,
-        payload: fileVideos,
-      });
+    
 
       dispatch({
         type: SET_SEARCH_TERM,
         payload: queryTerm,
       });
-      /*await axios
+      await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${queryTerm}&type=video&maxResults=10&key=${Key}`
         )
         .then((response) => {
           console.log(response);
           dispatch({
-            type: GET_VIDEOS,
+            type: SET_VIDEOS,
             payload: response.data,
           });
         });
-        */
-    } else {
-      dispatch({
-        type: SET_VIDEOS,
-        payload: fileVideos,
-      });
-      /*
+        
+    } else if (queryType === 'related') {
+    
       await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
@@ -103,7 +95,7 @@ const GlobalState = (props) => {
             type: SET_VIDEOS,
             payload: response.data,
           });
-        });*/
+        });
     }
   };
 

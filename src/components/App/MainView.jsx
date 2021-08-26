@@ -32,6 +32,15 @@ const Favorites = () => {
   );
 };
 
+const WatchFavorites = () => {
+  return (
+    <MainContainer>
+      <Header></Header>
+      <PlayerView></PlayerView>
+    </MainContainer>
+  );
+};
+
 export const MainView = () => {
   const globalContext = useContext(GlobalContext);
   MainContainer.defaultProps = {
@@ -42,10 +51,10 @@ export const MainView = () => {
 
   useEffect(() => {
     async function fetchData() {
-      await globalContext.getVideos('search', 'KOF XV');
+      await globalContext.getVideos('search', 'Wizeline');
     }
 
-    fetchData();
+    if (globalContext.videos.items.length === 0) fetchData();
     console.log('Effect called');
   }, []);
 
@@ -67,6 +76,8 @@ export const MainView = () => {
             <Header></Header>
             <LoginView></LoginView>
           </Route>
+
+          <PrivateRoute component={WatchFavorites} path="/watchFavorites" exact />
 
           <PrivateRoute component={Favorites} path="/favorites" exact></PrivateRoute>
         </Switch>

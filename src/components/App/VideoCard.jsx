@@ -32,7 +32,7 @@ const Description = styled.p`
   font-size: 14px;
 `;
 
-export const VideoCard = ({ imageUrl, title, description, video }) => {
+export const VideoCard = ({ imageUrl, title, description, video, forFavorites }) => {
   const globalContext = useContext(GlobalContext);
 
   Title.defaultProps = {
@@ -48,16 +48,15 @@ export const VideoCard = ({ imageUrl, title, description, video }) => {
     globalContext.getVideos('related', video.id.videoId);
   };
 
-
   return (
     <Card>
       <Link
-        to="/watchVideo"
+        to={forFavorites ? '/watchFavorites' : '/watchVideo'}
         style={{ textDecoration: 'none' }}
         onClick={() => handleVideoClicked(video)}
       >
         <CardImg src={imageUrl} alt="" />
-          <Title>{title}</Title>
+        <Title>{title}</Title>
         <Description>{description?.substring(0, 200)}</Description>
       </Link>
     </Card>

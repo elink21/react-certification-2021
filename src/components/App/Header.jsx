@@ -4,10 +4,10 @@ import { NavBar } from './NavBar';
 import styled from 'styled-components';
 import Switch from '@material-ui/core/Switch';
 import GlobalContext from '../context/GlobalContext';
-import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
 import { useSessionStorage } from '../Custom Hooks/useSessionStorage';
-import loginApi from '../Login/login.api';
+import { useHistory } from 'react-router';
 import user from '../Login/users.json';
+
 const AppHeader = styled.div`
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.color};
@@ -61,6 +61,7 @@ export const Header = () => {
   const globalContext = useContext(GlobalContext);
   const [showNavBar, setShowNavBar] = useState(false);
   const [isLogged, setIsLogged] = useSessionStorage('isLogged', '');
+  const history = useHistory();
 
   /*Passing theme to all styled components */
   SearchBar.defaultProps = {
@@ -75,6 +76,7 @@ export const Header = () => {
       const valueToSearch = event.target.value;
       globalContext.getVideos('search', valueToSearch);
       globalContext.setSearchTerm(valueToSearch);
+      history.push('/');
     }
   };
 
