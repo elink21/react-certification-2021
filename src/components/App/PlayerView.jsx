@@ -38,13 +38,13 @@ const FavoriteButton = styled.button`
 export const PlayerView = (props) => {
   const globalContext = useContext(GlobalContext);
   const [isLogged, setIsLogged] = useSessionStorage('isLogged', '');
-  const [favoriteVideos, setFavoriteVideos] = useLocalStorage('favoriteVideos', []);
+  const [favoriteVideos, setFavoriteVideos] = useLocalStorage('favoriteVideos', {items:[]});
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     console.log('Favorite effect called');
     setIsFavorite(false);
-    for (const video of favoriteVideos) {
+    for (const video of favoriteVideos.items) {
       if (globalContext.selectedVideo.snippet?.title === video.snippet?.title) {
         setIsFavorite(true);
         break;
@@ -53,16 +53,17 @@ export const PlayerView = (props) => {
   }, [favoriteVideos, globalContext.selectedVideo]);
 
   function manageFavorites() {
-    const newFavorites = [...favoriteVideos];
+    const newFavorites = {items:[...favoriteVideos.items]};
 
     if (!isFavorite) {
-      newFavorites.push(globalContext.selectedVideo);
+
+      newFavorites.items.push(globalContext.selectedVideo);
       console.log(newFavorites);
       setFavoriteVideos(newFavorites);
     } else {
-      for (let i = 0; i < newFavorites.length; i++) {
-        if (newFavorites[i].id.videoId == globalContext.selectedVideo.id.videoId) {
-          newFavorites.splice(i, 1);
+      for (let i = 0; i < newFavorites.items.length; i++) {
+        if (newFavorites.items[i].id.videoId == globalContext.selectedVideo.id.videoId) {
+          newFavorites.items.splice(i, 1);
         }
       }
       setFavoriteVideos(newFavorites);
@@ -111,7 +112,7 @@ export const PlayerView = (props) => {
           🔗
         </span>
         <h3>Related videos </h3>
-        <VideoList></VideoList>
+        <VideoList videos={globalContext.videos}></VideoList>
       </VideoListWrapper>
     </PlayerViewWrapper>
   );

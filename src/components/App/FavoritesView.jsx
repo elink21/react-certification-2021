@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import GlobalContext from '../context/GlobalContext';
+import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
 import { Header } from './Header';
-
+import { VideoList } from './VideoList';
 export const FavoritesView = () => {
+  const [favoriteVideos, setFavoriteVideos] = useLocalStorage('favoriteVideos', {items:[]});
   return (
     <div>
-      <h1>Favorites view</h1>
+      <VideoList videos={favoriteVideos}></VideoList>
     </div>
   );
 };

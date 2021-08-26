@@ -15,7 +15,7 @@ export const SearchView = () => {
   return (
     <div>
       <Title>Search term: {globalContext.searchTerm}</Title>
-      <VideoList></VideoList>
+      <VideoList videos={globalContext.videos}></VideoList>
     </div>
   );
 };
