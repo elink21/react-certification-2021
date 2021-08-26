@@ -5,6 +5,7 @@ import axios from 'axios';
 import fileVideos from '../../json/kofVideos.json'; //Im actually using a JSON file for the bug videos
 //import alternativeVideos from '../../json/alternateVideoList.json';
 import { SET_SEARCH_TERM, SET_THEME, SET_VIDEOS, SET_SELECTED_VIDEO } from './types';
+import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
 
 const GlobalState = (props) => {
   let Key = 'AIzaSyAII9XvTdlHMGKadu3lmyxr9wuIcCjv4q8';
@@ -33,7 +34,7 @@ const GlobalState = (props) => {
     videos: { items: [] },
     searchTerm: 'wizeline',
     theme: themes.light,
-    selectedVideo: {},
+    selectedVideo: fileVideos.items[4],
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
@@ -48,6 +49,7 @@ const GlobalState = (props) => {
       payload: newTheme,
     });
   };
+
 
   const setSearchTerm = (searchTerm) => {
     dispatch({
@@ -87,6 +89,11 @@ const GlobalState = (props) => {
         });
         */
     } else {
+      dispatch({
+        type: SET_VIDEOS,
+        payload: fileVideos,
+      });
+      /*
       await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
@@ -96,7 +103,7 @@ const GlobalState = (props) => {
             type: SET_VIDEOS,
             payload: response.data,
           });
-        });
+        });*/
     }
   };
 

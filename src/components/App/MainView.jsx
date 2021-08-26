@@ -7,6 +7,8 @@ import GlobalContext from '../context/GlobalContext';
 
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import { LoginView } from './LoginView';
+import { PrivateRoute } from './PrivateRoute';
+import { FavoritesView } from './FavoritesView';
 
 const MainContainer = styled.div`
   height: 100vh;
@@ -20,6 +22,15 @@ const MainContainer = styled.div`
   background-color: ${(props) => props.theme.primaryLight};
   color: ${(props) => props.theme.color};
 `;
+
+const Favorites = () => {
+  return (
+    <MainContainer>
+      <Header></Header>
+      <FavoritesView></FavoritesView>
+    </MainContainer>
+  );
+};
 
 export const MainView = () => {
   const globalContext = useContext(GlobalContext);
@@ -56,6 +67,8 @@ export const MainView = () => {
             <Header></Header>
             <LoginView></LoginView>
           </Route>
+
+          <PrivateRoute component={Favorites} path="/favorites" exact></PrivateRoute>
         </Switch>
       </MainContainer>
     </BrowserRouter>

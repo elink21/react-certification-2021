@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalContext from '../context/GlobalContext';
+import { useSessionStorage } from '../Custom Hooks/useSessionStorage';
 
 const NavBarWrapper = styled.div`
   position: fixed;
@@ -11,7 +12,7 @@ const NavBarWrapper = styled.div`
   height: 90vh;
   margin: 0;
   border: 1px solid black;
-  background-color: ${(props) => props.theme.primary}  ;
+  background-color: ${(props) => props.theme.primary};
   color: white;
   padding: 10px;
   font-size: 18px;
@@ -31,20 +32,23 @@ export const NavBar = (props) => {
   NavBarWrapper.defaultProps = {
     theme: globalContext.theme,
   };
+
+  const [isLogged, setIsLogged] = useSessionStorage('isLogged', '');
   return (
     <NavBarWrapper>
       <LinkWrapper>
-        <Link style={{ textDecoration: 'none', color:'white' }} to="/">
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
           Home
         </Link>
       </LinkWrapper>
       <br />
-
-      <LinkWrapper>
-        <Link style={{ textDecoration: 'none', color:'white' }} to="/favoriteVideos">
-          Favorite videos
-        </Link>
-      </LinkWrapper>
+      {isLogged && (
+        <LinkWrapper>
+          <Link style={{ textDecoration: 'none', color: 'white' }} to="/favorites">
+            Favorite videos
+          </Link>
+        </LinkWrapper>
+      )}
 
       <LinkWrapper>
         <CloseButton onClick={() => props.setShowNavBar(false)}>Close ❌</CloseButton>

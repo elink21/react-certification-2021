@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import React, { useContext, useState } from 'react';
 import { NavBar } from './NavBar';
 import styled from 'styled-components';
 import Switch from '@material-ui/core/Switch';
 import GlobalContext from '../context/GlobalContext';
 import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
+import { useSessionStorage } from '../Custom Hooks/useSessionStorage';
+import loginApi from '../Login/login.api';
+import user from '../Login/users.json';
 const AppHeader = styled.div`
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.color};
@@ -37,6 +40,16 @@ const SearchBar = styled.input`
     opacity: 0.9;
   }
 `;
+const AvatarContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+`;
+const Avatar = styled.img`
+  max-width: 50px;
+  border-radius: 50%;
+`;
 
 const ToggleButton = styled.div``;
 
@@ -46,8 +59,8 @@ const LoginButton = styled.span`
 
 export const Header = () => {
   const globalContext = useContext(GlobalContext);
-  const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', '');
   const [showNavBar, setShowNavBar] = useState(false);
+  const [isLogged, setIsLogged] = useSessionStorage('isLogged', '');
 
   /*Passing theme to all styled components */
   SearchBar.defaultProps = {
@@ -82,10 +95,6 @@ export const Header = () => {
         placeholder="Search..."
         placeholderTextColor="green"
         id="searchTerm"
-        value={searchTerm}
-        onChange={(e) => {
-          setSearchTerm(e.target.value);
-        }}
       ></SearchBar>
 
       <div></div>
@@ -100,9 +109,26 @@ export const Header = () => {
 
         <span>Dark mode</span>
       </ToggleButton>
-      <Link to="/login" style={{textDecoration: "none", color:"white"}}>
-        <LoginButton className="material-icons">account_circle</LoginButton>
-      </Link>
+      {!isLogged && (
+        <Link to="/login" style={{ textDecoration: 'none', color: 'white' }}>
+          <LoginButton className="material-icons">account_circle</LoginButton>
+        </Link>
+      )}
+
+      {isLogged && (
+        <AvatarContainer>
+          <Avatar src={user.avatarUrl} alt="" />
+          <LoginButton
+            onClick={() => {
+              setIsLogged(false);
+              window.location = '/';
+            }}
+            className="material-icons"
+          >
+            logout
+          </LoginButton>
+        </AvatarContainer>
+      )}
     </AppHeader>
   );
 };

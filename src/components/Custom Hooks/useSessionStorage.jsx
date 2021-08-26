@@ -8,12 +8,12 @@ function getSessionData(key, defaultValue) {
   return JSON.parse(stored);
 }
 
-export function useSessionStorage(key, defaultValue) {
-  const [value, setValue] = useState(getSessionStorageOrDefault(key, defaultValue));
+export const useSessionStorage = (key, defaultValue) => {
+  const [value, setValue] = useState(getSessionData(key, defaultValue));
 
   useEffect(() => {
     sessionStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
 
   return [value, setValue];
-}
+};

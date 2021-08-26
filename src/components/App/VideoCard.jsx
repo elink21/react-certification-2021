@@ -48,6 +48,7 @@ export const VideoCard = ({ imageUrl, title, description, video }) => {
     globalContext.getVideos('related', video.id.videoId);
   };
 
+
   return (
     <Card>
       <Link
@@ -56,7 +57,7 @@ export const VideoCard = ({ imageUrl, title, description, video }) => {
         onClick={() => handleVideoClicked(video)}
       >
         <CardImg src={imageUrl} alt="" />
-        <Title>{title}</Title>
+          <Title>{title}</Title>
         <Description>{description?.substring(0, 200)}</Description>
       </Link>
     </Card>
