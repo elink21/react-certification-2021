@@ -10,6 +10,7 @@ import user from '../Login/users.json';
 import { Power4, gsap } from 'gsap';
 import { red } from '@material-ui/core/colors';
 import { useRef } from 'react';
+import { useEffect } from 'react';
 
 const AppHeader = styled.div`
   background-color: ${(props) => props.theme.primary};
@@ -101,6 +102,14 @@ export const Header = () => {
     });
   };
 
+  const [switchState, setSwitchState] = useState(false);
+
+  useEffect(() => {
+    if (globalContext.storageTheme === 'dark') {
+      setSwitchState(true);
+    }
+  }, []);
+
   return (
     <AppHeader>
       <MenuIcon
@@ -130,7 +139,12 @@ export const Header = () => {
           name="checkedTheme"
           inputProps={{ 'aria-label': 'default color checkbox' }}
           color="primary"
-          onChange={(e) => globalContext.setTheme(e.target.checked)}
+          onChange={(e) => {
+            console.log(globalContext.theme);
+            globalContext.setTheme(e.target.checked ? 'dark' : 'light');
+            setSwitchState(!switchState);
+          }}
+          checked={switchState}
         />
 
         <span>Dark mode</span>

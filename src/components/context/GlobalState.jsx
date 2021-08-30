@@ -1,10 +1,11 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import GlobalReducer from './GlobalReducer';
 import GlobalContext from './GlobalContext';
 import axios from 'axios';
 import fileVideos from '../../json/alternateVideoList.json'; //Im actually using a JSON file for the bug videos
 import { SET_SEARCH_TERM, SET_THEME, SET_VIDEOS, SET_SELECTED_VIDEO } from './types';
 import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
+import { darken } from '@material-ui/core';
 
 const GlobalState = (props) => {
   let Key = 'AIzaSyAII9XvTdlHMGKadu3lmyxr9wuIcCjv4q8';
@@ -37,10 +38,12 @@ const GlobalState = (props) => {
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
+  const [storageTheme, setStorageTheme] = useLocalStorage('theme', 'light');
 
-  const setTheme = (darkEnabled) => {
+  const setTheme = (theme) => {
+    setStorageTheme(theme);
     let newTheme = themes.light;
-    if (darkEnabled) {
+    if (theme === 'dark') {
       newTheme = themes.dark;
     }
     dispatch({
@@ -48,6 +51,10 @@ const GlobalState = (props) => {
       payload: newTheme,
     });
   };
+
+  useEffect(() => {
+    setTheme(storageTheme);
+  }, []);
 
   const setSearchTerm = (searchTerm) => {
     dispatch({
@@ -112,6 +119,7 @@ const GlobalState = (props) => {
         searchTerm: state.searchTerm,
         theme: state.theme,
         selectedVideo: state.selectedVideo,
+        storageTheme: storageTheme,
         setTheme,
         getVideos,
         setSearchTerm,
