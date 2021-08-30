@@ -11,6 +11,7 @@ export const FavoritesView = () => {
 
   return (
     <div>
+      {favoriteVideos.items.length==0 && <h2>Favorites list is empty</h2>}
       <VideoList  videos={favoriteVideos} forFavorites={true}></VideoList>
     </div>
   );

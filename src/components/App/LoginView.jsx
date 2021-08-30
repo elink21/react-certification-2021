@@ -56,7 +56,9 @@ export const LoginView = () => {
     <LoginContainer>
       <LoginForm>
         <h1>Login view</h1>
-
+        <h4>Hint</h4>
+        <small>Username: wizeline</small>
+        <small>Password: Rocks!</small> <br />
         <form>
           <LoginInput
             onChange={(e) => setUserName(e.target.value)}
