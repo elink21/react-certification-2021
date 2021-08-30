@@ -7,6 +7,9 @@ import GlobalContext from '../context/GlobalContext';
 import { useSessionStorage } from '../Custom Hooks/useSessionStorage';
 import { useHistory } from 'react-router';
 import user from '../Login/users.json';
+import { Power4, gsap } from 'gsap';
+import { red } from '@material-ui/core/colors';
+import { useRef } from 'react';
 
 const AppHeader = styled.div`
   background-color: ${(props) => props.theme.primary};
@@ -63,6 +66,16 @@ export const Header = () => {
   const [isLogged, setIsLogged] = useSessionStorage('isLogged', '');
   const history = useHistory();
 
+  /*GSAP NavBar animation*/
+  const navbar = document.querySelector('.navbar');
+
+  const timeline = gsap.timeline({
+    defaults: {
+      duration: 0.5,
+      ease: Power4.easeInOut,
+    },
+  });
+
   /*Passing theme to all styled components */
   SearchBar.defaultProps = {
     theme: globalContext.theme,
@@ -80,17 +93,28 @@ export const Header = () => {
     }
   };
 
+  const closeNavBar = () => {
+    console.log('reversed');
+    timeline.to(navbar, {
+      x: -300,
+      opacity: 0,
+    });
+  };
+
   return (
     <AppHeader>
       <MenuIcon
         onClick={(e) => {
-          setShowNavBar(true);
+          timeline.to(navbar, {
+            x: 300,
+            opacity: 1,
+          });
         }}
         className="material-icons"
       >
         menu
       </MenuIcon>
-      {showNavBar && <NavBar setShowNavBar={setShowNavBar} />}
+      <NavBar closeNavBar={closeNavBar}></NavBar>
 
       <SearchBar
         onKeyDown={handleKeyDown}

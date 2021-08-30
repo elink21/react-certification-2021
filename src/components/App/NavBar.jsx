@@ -6,15 +6,17 @@ import { useSessionStorage } from '../Custom Hooks/useSessionStorage';
 
 const NavBarWrapper = styled.div`
   position: fixed;
+  z-index: 3;
   top: 0;
-  left: 0;
-  width: 15vw;
+  left: -300px;
+  width: 200px;
   height: 90vh;
+  border-radius: 10px;
   margin: 0;
-  border: 1px solid black;
   background-color: ${(props) => props.theme.primary};
   color: white;
   padding: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   font-size: 18px;
 `;
 
@@ -23,19 +25,29 @@ const LinkWrapper = styled.div`
   padding: 10px;
 `;
 
-const CloseButton = styled.div`
-  cursor: pointer;
+const ReturnIcon = styled.i`
+  text-align: center;
+  font-size: 30px;
 `;
 
 export const NavBar = (props) => {
   const globalContext = useContext(GlobalContext);
+
   NavBarWrapper.defaultProps = {
     theme: globalContext.theme,
   };
 
   const [isLogged, setIsLogged] = useSessionStorage('isLogged', '');
   return (
-    <NavBarWrapper>
+    <NavBarWrapper className="navbar">
+      <LinkWrapper>
+        <div
+          onClick={() => props.closeNavBar()}
+          style={{ textAlign: 'center', cursor: 'pointer' }}
+        >
+          <ReturnIcon className="material-icons">arrow_back</ReturnIcon>
+        </div>
+      </LinkWrapper>
       <LinkWrapper>
         <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
           Home
@@ -49,10 +61,6 @@ export const NavBar = (props) => {
           </Link>
         </LinkWrapper>
       )}
-
-      <LinkWrapper>
-        <CloseButton onClick={() => props.setShowNavBar(false)}>Close ❌</CloseButton>
-      </LinkWrapper>
     </NavBarWrapper>
   );
 };
