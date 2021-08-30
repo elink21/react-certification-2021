@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import GlobalReducer from './GlobalReducer';
 import GlobalContext from './GlobalContext';
 import axios from 'axios';
-import fileVideos from '../../json/alternateVideoList.json'; //Im actually using a JSON file for the bug videos
+import fileVideos from '../../json/videoList.json'; //Im actually using a JSON file for the bug videos
 import { SET_SEARCH_TERM, SET_THEME, SET_VIDEOS, SET_SELECTED_VIDEO } from './types';
 import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
 import { darken } from '@material-ui/core';
@@ -34,7 +34,7 @@ const GlobalState = (props) => {
     videos: { items: [] },
     searchTerm: 'wizeline',
     theme: themes.light,
-    selectedVideo: fileVideos.items[4],
+    selectedVideo: fileVideos.items[1],
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
@@ -77,11 +77,7 @@ const GlobalState = (props) => {
         payload: queryTerm,
       });
 
-      dispatch({
-        type: SET_VIDEOS,
-        payload: fileVideos,
-      });
-      /*await axios
+      await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${queryTerm}&type=video&maxResults=10&key=${Key}`
         )
@@ -91,13 +87,9 @@ const GlobalState = (props) => {
             type: SET_VIDEOS,
             payload: response.data,
           });
-        });*/
+        });
     } else if (queryType === 'related') {
-      dispatch({
-        type: SET_VIDEOS,
-        payload: fileVideos,
-      });
-      /*
+  
       await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
@@ -108,7 +100,7 @@ const GlobalState = (props) => {
             payload: response.data,
           });
         });
-        */
+        
     }
   };
 
