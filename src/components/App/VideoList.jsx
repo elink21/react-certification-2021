@@ -5,28 +5,25 @@ import GlobalContext from '../context/GlobalContext';
 
 const VideosContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   justify-items: center;
   gap: 20px;
   padding: 20px;
 `;
 
 export const VideoList = (props) => {
-  const globalContext = useContext(GlobalContext);
-
- 
   return (
     <VideosContainer>
-      {globalContext.videos.items.map(function (video, i) {
+      {props.videos.items.map(function (video, i) {
         return (
           <VideoCard
             key={i}
-            imageUrl={video.snippet.thumbnails.high.url}
-            title={video.snippet.title}
-            description={video.snippet.description}
+            imageUrl={video.snippet?.thumbnails.high.url}
+            title={video.snippet?.title}
+            description={video.snippet?.description}
             videoId={video.id.videoId}
             video={video}
-            toggleFunction={props.toggleFunction}
+            forFavorites={props.forFavorites}
           ></VideoCard>
         );
       })}

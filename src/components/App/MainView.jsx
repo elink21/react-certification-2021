@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Header } from './Header';
-import { VideoList } from './VideoList';
-import { VideoSearchView } from './VideoSearchView';
+import { PlayerView } from './PlayerView';
+import { SearchView } from './SearchView';
 import GlobalContext from '../context/GlobalContext';
+
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { LoginView } from './LoginView';
+import { PrivateRoute } from './PrivateRoute';
+import { FavoritesView } from './FavoritesView';
 
 const MainContainer = styled.div`
   height: 100vh;
@@ -18,10 +23,23 @@ const MainContainer = styled.div`
   color: ${(props) => props.theme.color};
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  font-size: 50px;
-`;
+const Favorites = () => {
+  return (
+    <MainContainer>
+      <Header></Header>
+      <FavoritesView></FavoritesView>
+    </MainContainer>
+  );
+};
+
+const WatchFavorites = () => {
+  return (
+    <MainContainer>
+      <Header></Header>
+      <PlayerView></PlayerView>
+    </MainContainer>
+  );
+};
 
 export const MainView = () => {
   const globalContext = useContext(GlobalContext);
@@ -32,40 +50,38 @@ export const MainView = () => {
   const [searchViewEnabled, setSearchViewEnabled] = useState(false);
 
   useEffect(() => {
-    globalContext.getVideos('search', 'wizeline');
+    async function fetchData() {
+      await globalContext.getVideos('search', 'Wizeline');
+    }
+
+    if (globalContext.videos.items.length === 0) fetchData();
     console.log('Effect called');
   }, []);
 
-
-
-  const toggleViewMode = (newValue) => {
-    setSearchViewEnabled(newValue);
-  };
-
-
-  let ActualView;
-
-  if (searchViewEnabled) {
-    ActualView = (
-      <VideoSearchView
-        toggleFunction={toggleViewMode}
-      />
-    );
-  } else {
-    ActualView = (
-      <div>
-        <Title>Search term: {globalContext.searchTerm}</Title>
-        <VideoList
-          toggleFunction={toggleViewMode}
-        ></VideoList>
-      </div>
-    );
-  }
-
   return (
-    <MainContainer>
-      <Header toggleFunction={toggleViewMode} ></Header>
-      {ActualView}
-    </MainContainer>
+    <BrowserRouter>
+      <MainContainer>
+        <Switch>
+          <Route exact path="/">
+            <Header></Header>
+            <SearchView></SearchView>
+          </Route>
+
+          <Route path="/watchVideo">
+            <Header></Header>
+            <PlayerView></PlayerView>
+          </Route>
+
+          <Route path="/login">
+            <Header></Header>
+            <LoginView></LoginView>
+          </Route>
+
+          <PrivateRoute component={WatchFavorites} path="/watchFavorites" exact />
+
+          <PrivateRoute component={Favorites} path="/favorites" exact></PrivateRoute>
+        </Switch>
+      </MainContainer>
+    </BrowserRouter>
   );
 };

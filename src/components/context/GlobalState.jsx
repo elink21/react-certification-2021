@@ -1,14 +1,15 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import GlobalReducer from './GlobalReducer';
 import GlobalContext from './GlobalContext';
 import axios from 'axios';
-//import fileVideos from '../../json/videoList.json';
-//import alternativeVideos from '../../json/alternateVideoList.json';
-import { SET_SEARCH_TERM, SET_THEME, GET_VIDEOS, SET_SELECTED_VIDEO } from './types';
+import fileVideos from '../../json/videoList.json'; //Im actually using a JSON file for the bug videos
+import { SET_SEARCH_TERM, SET_THEME, SET_VIDEOS, SET_SELECTED_VIDEO } from './types';
+import { useLocalStorage } from '../Custom Hooks/useLocalStorage';
+import { darken } from '@material-ui/core';
 
 const GlobalState = (props) => {
   let Key = 'AIzaSyAII9XvTdlHMGKadu3lmyxr9wuIcCjv4q8';
-  Key= "AIzaSyBlPrvGVNZJXVXB4Gzx50kBMFJnPYuWgnM";
+  let alternateKey = 'AIzaSyBlPrvGVNZJXVXB4Gzx50kBMFJnPYuWgnM';
 
   const themes = {
     light: {
@@ -33,14 +34,16 @@ const GlobalState = (props) => {
     videos: { items: [] },
     searchTerm: 'wizeline',
     theme: themes.light,
-    selectedVideo:{}
+    selectedVideo: fileVideos.items[1],
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
+  const [storageTheme, setStorageTheme] = useLocalStorage('theme', 'light');
 
-  const setTheme = (darkEnabled) => {
+  const setTheme = (theme) => {
+    setStorageTheme(theme);
     let newTheme = themes.light;
-    if (darkEnabled) {
+    if (theme === 'dark') {
       newTheme = themes.dark;
     }
     dispatch({
@@ -48,6 +51,10 @@ const GlobalState = (props) => {
       payload: newTheme,
     });
   };
+
+  useEffect(() => {
+    setTheme(storageTheme);
+  }, []);
 
   const setSearchTerm = (searchTerm) => {
     dispatch({
@@ -63,30 +70,37 @@ const GlobalState = (props) => {
     });
   };
 
-  const getVideos = (queryType, queryTerm) => {
+  const getVideos = async (queryType, queryTerm) => {
     if (queryType === 'search') {
-      axios
+      dispatch({
+        type: SET_SEARCH_TERM,
+        payload: queryTerm,
+      });
+
+      await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${queryTerm}&type=video&maxResults=10&key=${Key}`
         )
         .then((response) => {
           console.log(response);
           dispatch({
-            type: GET_VIDEOS,
+            type: SET_VIDEOS,
             payload: response.data,
           });
         });
-    } else {
-      axios
+    } else if (queryType === 'related') {
+  
+      await axios
         .get(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${queryTerm}&type=video&maxResults=10&key=${Key}`
         )
         .then((response) => {
           dispatch({
-            type: GET_VIDEOS,
+            type: SET_VIDEOS,
             payload: response.data,
           });
         });
+        
     }
   };
 
@@ -97,6 +111,7 @@ const GlobalState = (props) => {
         searchTerm: state.searchTerm,
         theme: state.theme,
         selectedVideo: state.selectedVideo,
+        storageTheme: storageTheme,
         setTheme,
         getVideos,
         setSearchTerm,

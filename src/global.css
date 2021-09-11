@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body{
+body {
   font-family: 'Montserrat';
   margin: 0;
 }
 
-::selection{
+::selection {
   background-color: violet;
+}
 
-  
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color:gray;
 }

@@ -1,0 +1,352 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "jDbEooSQvAHylMLHQ_JXEtXTm88",
+  "nextPageToken": "CAoQAA",
+  "regionCode": "MX",
+  "pageInfo": {
+    "totalResults": 469733,
+    "resultsPerPage": 10
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "TOvvTB4dFafMuZ5U5aStVEeysps",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "grScAW6t5Fc"
+      },
+      "snippet": {
+        "publishedAt": "2021-08-23T15:38:42Z",
+        "channelId": "UChbwE8OaITH1rhi2I0ny3Cg",
+        "title": "Vazou Personagens Novos e Surpreendentes de KOFXV",
+        "description": "A Games Com já está aí e promete trazer grandes novidades para The King of Fighters XV. Seria uma pessoa se boa parte dessas novidades tivessem ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/grScAW6t5Fc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/grScAW6t5Fc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/grScAW6t5Fc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Velberan Games",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-08-23T15:38:42Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "vgkmqfiily8mBBHa7B8dEl7RS0E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "3CuAyMc6UPg"
+      },
+      "snippet": {
+        "publishedAt": "2021-08-20T15:00:01Z",
+        "channelId": "UC3Hm1wyc6B42m9XFBBtIKDg",
+        "title": "KOF XV RESULTADOS de la ENCUESTA! // Los personajes MAS PEDIDOS por los FANS! 🔥",
+        "description": "Quienes son los PERSONAJES MAS PEDIDOS en KOF XV? Resultados DE LA ENCUESTA de KOF 15 !! Los personajes MAS DESEADOS: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3CuAyMc6UPg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3CuAyMc6UPg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3CuAyMc6UPg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Game Oxygen",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-08-20T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qQh27dWZQI-h-59knYK6NdvL1wo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_CgXn5Gyn4k"
+      },
+      "snippet": {
+        "publishedAt": "2021-08-21T19:00:20Z",
+        "channelId": "UC3Hm1wyc6B42m9XFBBtIKDg",
+        "title": "KOF XV Nuevos personajes FILTRADOS! // ASH y Heidern CONFIRMADOS?",
+        "description": "Nuevos personajes FILTRADOS! en KOF XV? ASH y Heidern fueron CONFIRMADOS para el juego? Quien es el AMS PEDIDO por los FANS : bit.ly/3mfJ36n ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_CgXn5Gyn4k/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_CgXn5Gyn4k/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_CgXn5Gyn4k/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Game Oxygen",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-08-21T19:00:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "u9k1y_PtDG9L5gojf2HI-WTjERk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "IaMLwrkoMMw"
+      },
+      "snippet": {
+        "publishedAt": "2021-08-22T00:02:21Z",
+        "channelId": "UC-zoo0r7MUN8qD34J8s3Pqw",
+        "title": "Huge King of Fighters 15 Leak shows us all new characters, returning favorites &amp; more!",
+        "description": "Leak season is a year 'round season it would seem. So thanks to a retailer spilling some of the beans early (which is exactly how we got the original kof 15 leak ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IaMLwrkoMMw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IaMLwrkoMMw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IaMLwrkoMMw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "rooflemonger",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-08-22T00:02:21Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Dh-fEI-2asOy_zR1A_a_w5HxrbQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fb3ldoiHIIg"
+      },
+      "snippet": {
+        "publishedAt": "2021-06-24T01:59:02Z",
+        "channelId": "UCI-Q7uYhRVMxyrmcZRf0Egg",
+        "title": "KOF XV｜VANESSA｜Trailer #23【TEAM SECRET AGENT】",
+        "description": "THE KING OF FIGHTERS XV is coming Q1 2022! https://www.snk-corp.co.jp/official/kof-xv/ ©SNK CORPORATION ALL RIGHTS RESERVED. #SNK #KOF ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fb3ldoiHIIg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fb3ldoiHIIg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fb3ldoiHIIg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SNK OFFICIAL",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-06-24T01:59:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Jg-A0DsFA5Rx0fmNVj9f153BXmo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zCJ0M1nraec"
+      },
+      "snippet": {
+        "publishedAt": "2021-04-29T01:59:01Z",
+        "channelId": "UCI-Q7uYhRVMxyrmcZRf0Egg",
+        "title": "KOF XV｜CHRIS｜Trailer #15【TEAM OROCHI】",
+        "description": "THE KING OF FIGHTERS XV is coming Q1 2022! https://www.snk-corp.co.jp/official/kof-xv/ ©SNK CORPORATION ALL RIGHTS RESERVED. #SNK #KOF ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zCJ0M1nraec/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zCJ0M1nraec/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zCJ0M1nraec/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SNK OFFICIAL",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-04-29T01:59:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "oEmJAoz3NItzAaTprTGGj1k1zCg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iLAoXFcbX3g"
+      },
+      "snippet": {
+        "publishedAt": "2021-08-21T18:08:32Z",
+        "channelId": "UCbzZDEKO170KTR5W5IRt5wQ",
+        "title": "Ash Crimson, Heidern, 2 nuevos personajes y el Boss de KOF XV se filtran, previo a Gamescom!!",
+        "description": "Ash Crimson, Heidern, 2 nuevos personajes y el Boss de KOF XV se filtran, previo a Gamescom!! Compartan, like, suscribete y que el poder del Shoryuken los ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iLAoXFcbX3g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iLAoXFcbX3g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iLAoXFcbX3g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "John Shoryuken",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-08-21T18:08:32Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "plrC5MO6CdoCnB2Lrv7z-IbAiL8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "opNubV7j1Tc"
+      },
+      "snippet": {
+        "publishedAt": "2021-06-10T02:05:19Z",
+        "channelId": "UCI-Q7uYhRVMxyrmcZRf0Egg",
+        "title": "KOF XV｜LUONG｜Trailer #22【TEAM SECRET AGENT】",
+        "description": "THE KING OF FIGHTERS XV is coming Q1 2022! https://www.snk-corp.co.jp/official/kof-xv/ ©SNK CORPORATION ALL RIGHTS RESERVED. #SNK #KOF ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/opNubV7j1Tc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/opNubV7j1Tc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/opNubV7j1Tc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SNK OFFICIAL",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-06-10T02:05:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-uBWXBEtuqGR49ow4cfNtd1Hae8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9zhnEChRrmg"
+      },
+      "snippet": {
+        "publishedAt": "2021-05-06T01:59:04Z",
+        "channelId": "UCI-Q7uYhRVMxyrmcZRf0Egg",
+        "title": "KOF XV｜RYO SAKAZAKI &amp; ROBERT GARCIA｜Trailer #16 #17【TEAM ART OF FIGHTING】",
+        "description": "THE KING OF FIGHTERS XV is coming Q1 2022! https://www.snk-corp.co.jp/official/kof-xv/ ©SNK CORPORATION ALL RIGHTS RESERVED. #SNK #KOF ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9zhnEChRrmg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9zhnEChRrmg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9zhnEChRrmg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SNK OFFICIAL",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-05-06T01:59:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "xmlzerLLF5bK0k8HayC2AlmQUfM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "y5uW5v66-4s"
+      },
+      "snippet": {
+        "publishedAt": "2021-07-30T04:29:21Z",
+        "channelId": "UCI-Q7uYhRVMxyrmcZRf0Egg",
+        "title": "KOF XV｜ATHENA ASAMIYA｜Trailer #26【TEAM SUPER HEROINE】",
+        "description": "THE KING OF FIGHTERS XV is coming Q1 2022! https://www.snk-corp.co.jp/official/kof-xv/ ©SNK CORPORATION ALL RIGHTS RESERVED. #SNK #KOF ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/y5uW5v66-4s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/y5uW5v66-4s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/y5uW5v66-4s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "SNK OFFICIAL",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-07-30T04:29:21Z"
+      }
+    }
+  ]
+}
